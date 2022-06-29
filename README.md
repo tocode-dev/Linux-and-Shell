@@ -1,1 +1,1 @@
-# private
+# Stuff for Linux and Shell
