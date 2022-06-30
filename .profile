@@ -8,9 +8,11 @@ if [ -d "$app_dir" ]; then
   done
 fi
 
+alias dpos="docker compose"
+alias vi="nvim"
+
 alias ll="ls -hl"
 alias la="ls -hal"
 alias lg="ls -hal | grep"
-alias dpos="docker compose"
-alias vi="nvim"
+
 alias fnd="fd -H -tf"
