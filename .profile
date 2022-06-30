@@ -1,7 +1,7 @@
 # Adds all directories with executable files to PATH.
-bin_dir=$HOME/bin
-if [ -d "$bin_dir" ]; then
-  for e in $(fd -pa -tx "$bin_dir" -x echo {//}); do
+app_dir=$HOME/apps
+if [ -d "$app_dir" ]; then
+  for e in $(fd -pa -tx "$app_dir" -x echo {//}); do
     if [ -d "$e" ] && [[ ":$PATH:" != *":$e:"* ]]; then
       PATH="${PATH:+"$PATH:"}$e"
     fi
