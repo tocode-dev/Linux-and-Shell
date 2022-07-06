@@ -1,18 +1,17 @@
-# Adds all directories with executable files to PATH.
-app_dir=$HOME/apps
-if [ -d "$app_dir" ]; then
-  for e in $(fd -pa -tx "$app_dir" -x echo {//}); do
-    if [ -d "$e" ] && [[ ":$PATH:" != *":$e:"* ]]; then
-      PATH="${PATH:+"$PATH:"}$e"
-    fi
-  done
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
 fi
 
-alias dpos="docker compose"
-alias vi="nvim"
+EDITOR=nvim
 
+alias dos="docker compose"
+alias vi="nvim"
 alias ll="ls -hl"
 alias la="ls -hal"
 alias lg="ls -hal | grep"
-
+alias lh="ls -halF | grep ' \..*'"
+alias trl="tree -pguaF"
+alias trll="tree -pguaFf -L"
+alias tl="tree -pguaF -L 1"
 alias fnd="fd -H -tf"
